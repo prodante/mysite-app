@@ -21,6 +21,10 @@ class MainController extends Controller
                 [
                     'title' => 'Teacher',
                     'salary' => '40,000'
+                ],
+                [
+                    'title' => 'User',
+                    'salary' => '5,000'
                 ]
             ]
         ]);
