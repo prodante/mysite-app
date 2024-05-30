@@ -8,27 +8,12 @@ class MainController extends Controller
 {
     public function index()
     {
-        return view('index', [
-            'jobs' => [
-                [
-                    'title' => 'Director',
-                    'salary' => '50,000'
-                ],
-                [
-                    'title' => 'Programmer',
-                    'salary' => '10,000'
-                ],
-                [
-                    'title' => 'Teacher',
-                    'salary' => '40,000'
-                ]
-            ]
-        ]);
+        return view('index');
     }
 
-    public function about()
+    public function jobs()
     {
-        return view('about');
+        return view('jobs');
     }
 
     public function contact()
