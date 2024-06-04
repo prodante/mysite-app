@@ -2,7 +2,20 @@
 
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Job;
 
-Route::get('/', [MainController::class, 'index'])->name('index');
-Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/jobs', function() {
+    $jobs = Job::with('employer')->get();
+    return view('jobs', ['jobs' => $jobs]);
+ });
+
+Route::get('/jobs/{id}', function($id) {
+    $job = Job::find($id);
+    return view('job', ['job' => $job]);
+});
+
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
